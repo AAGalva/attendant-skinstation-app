@@ -1,0 +1,72 @@
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+  <div class="sidebar-brand-icon">
+  <%= image_tag("SS LOGO Inverted.png", :alt => "SS LOGO", :id => "ss_logo") %>
+  </div>
+  <div class="sidebar-brand-text mx-3 text-primary"></div>
+</a>
+<hr class="my-0">
+<li class="nav-item <%= if request.path.include?('dashboard') 
+                      "active"
+                    end%>">
+  <a class="nav-link" href="/dashboard">
+    <i class="fas fa-fw fa-th-large"></i>
+    <span>Dashboard</span></a>
+</li>
+<hr class="">
+
+<div class="sidebar-heading">
+  Features
+</div>
+<li class="nav-item <%= if request.path.include?('branch') 
+    "active"
+  end%>">
+  <a class="nav-link collapsed" href="/branch" data-toggle="collapse" data-target="#collapseBranch"
+    aria-expanded="true" aria-controls="collapseBranch">
+    <i class="fas fa-fw fa-calendar-week"></i>
+    <span>Schedule</span>
+  </a>
+  <div id="collapseBranch" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Branches</h6>
+      <a class="collapse-item" href="/branch">List</a>
+    </div>
+  </div>
+</li>
+<li class="nav-item <%= if request.path.include?('services') 
+    "active"
+  end%>">
+  <a class="nav-link collapsed" href="/services" data-toggle="collapse" data-target="#collapseServices" aria-expanded="true"
+    aria-controls="collapseServices">
+    <i class="fas fa-fw fa-list"></i>
+    <span>Appointments</span>
+  </a>
+  <div id="collapseServices" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Services</h6>
+      <a class="collapse-item" href="/services">List</a>
+    </div>
+  </div>
+</li>  
+<li class="nav-item <%= if request.path.include?('reports') 
+  "active"
+end%>">
+  <a class="nav-link collapsed" href="/settings" data-toggle="collapse" data-target="#collapseReports" aria-expanded="true"
+    aria-controls="collapseReports">
+    <i class="fab fa-fw fa fa-chart-line"></i>
+    <span>Branch Sales</span>
+  </a>
+  <div id="collapseReports" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">ITD Reports</h6>
+      <a class="collapse-item" href="/deskreports">List</a>
+    </div>
+  </div>
+</li> 
+</li>
+
+
+<!-- Added: Verion 1.2 -->
+<hr class="sidebar-divider">
+<div class="version" id="version-ruangadmin"></div>
+</ul> 

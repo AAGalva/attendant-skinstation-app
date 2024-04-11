@@ -1,0 +1,108 @@
+<% if request.path.include?('dashboard') %>
+<% end %>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <%= render 'components/admin_sidebar' %>
+    <!-- Sidebar -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <%= render 'components/admin_topbar' %>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h3 class="h6 mb-0 text-gray-800">Dashboard </h3>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+          </div>
+
+          <div class="row mb-3">                
+
+          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Reports</div>
+                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= @deskreports_pending %></div>
+                  <div class="mt-2 mb-0 text-muted text-xs">
+                  </div>
+                </div>
+                <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-warning"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-uppercase mb-1">Closed Reports</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @deskreports_closed %></div>
+                  <div class="mt-2 mb-0 text-muted text-xs">
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-success"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-uppercase mb-1">Total Reports</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @deskreports_all %></div>
+                  <div class="mt-2 mb-0 text-muted text-xs">
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-info"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+        </div>
+
+          </div>
+          <!--Row-->
+        
+          <!-- Modal Logout -->
+          <%= render 'components/admin_logout' %>         
+          <!-- Modal Logout -->
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+</body>
